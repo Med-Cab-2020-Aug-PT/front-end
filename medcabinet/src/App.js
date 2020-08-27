@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "./App.css"
-import Home from "./Components/Home"
 import LoginForm from "./Components/LoginForm";
 import { Link, Route, Switch} from 'react-router-dom'
 import SignupForm from "./Components/SignupForm";
@@ -19,11 +18,7 @@ export default function App() {
       </nav>
       
       <Switch>
-{/* 
-        <Route path="/order/:yumyum">
-          <Item items={products} />
-        </Route> */}
-  
+
        
         {/* <Route path="/order" render={(props) => {
           console.log('react router props', props)
@@ -33,7 +28,6 @@ export default function App() {
 
           <Route path ="/signup" component={SignupForm}/>
 
-        {/* <Route path="/" component={Home} /> */}
         </Switch>
 
     </div>
