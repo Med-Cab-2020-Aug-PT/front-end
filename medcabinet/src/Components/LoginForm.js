@@ -17,13 +17,14 @@ const [errors, setErrors] = useState ({
     
 const [buttonDisabled, setButtonDisabled] = useState(true);
 
+
 const validateChange = e =>{
     yup
     .reach(formSchema, e.target.username)
     .validate(e.target.value)
     .then(valid =>{
-        setErrors({
-            ...errors,[e.target.username]: ""})
+        setErrors({...errors,[e.target.username]: ""})
+        console.log("success")
     })
     .catch(err => {
         setErrors({...errors,[e.target.username]: err.errors[0]});
@@ -31,7 +32,6 @@ const validateChange = e =>{
   
       });
 };
-
 const formSchema =yup.object().shape({
     username: yup
     .string()
