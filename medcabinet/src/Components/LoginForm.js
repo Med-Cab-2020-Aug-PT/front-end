@@ -24,7 +24,6 @@ const validateChange = e =>{
     .then(valid =>{
         setErrors({
             ...errors,[e.target.username]: ""})
-        // console.log("login successful")
     })
     .catch(err => {
         setErrors({...errors,[e.target.username]: err.errors[0]});
