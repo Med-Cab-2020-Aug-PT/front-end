@@ -25,7 +25,7 @@ const [buttonDisabled, setButtonDisabled] = useState(true);
 
 const validateChange = e =>{
     yup
-    .reach(formSchema, e.target.name)
+    .reach(formSchema, e.target.firstName)
     .validate(e.target.value)
     .then(valid =>{
         setErrors({...errors,[e.target.firstName]: ""})
