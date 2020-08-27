@@ -69,7 +69,7 @@ useEffect(() =>{
       e.preventDefault();
       console.log("sign up success")
       axios
-      .post("https://reqres.in/api/users",signupState)
+      .post("https://med-cab-2020-api.herokuapp.com/register",signupState)
         .then(res => {
         console.log("success!",res.data);
 
