@@ -366,3 +366,24 @@ input[type="password" i] {
 img{
   width:100%;
 }
+.sign-up-link{
+  margin-right:5rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  margin-left: 5rem;
+}
+.sign-up-link a{
+  font-size: 1.2rem;
+  color:red;
+  text-decoration: none;
+  margin-left:.5rem;
+  margin-top: 1.2rem;
+}
+.sign-up-link h4{
+  font-size: 1.2rem;
+  color:white;
+  text-decoration: none;
+  margin-left:.5rem;
+  margin-top: 1.2rem;
+}

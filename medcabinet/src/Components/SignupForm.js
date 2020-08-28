@@ -25,20 +25,20 @@ const [buttonDisabled, setButtonDisabled] = useState(true);
 
 const validateChange = e =>{
     yup
-    .reach(formSchema, e.target.firstName)
+    .reach(formSchema, e.target.name)
     .validate(e.target.value)
     .then(valid =>{
-        setErrors({...errors,[e.target.firstName]: ""})
+        setErrors({...errors,[e.target.name]: ""})
         console.log("success")
     })
     .catch(err => {
-        setErrors({...errors,[e.target.firstName]: err.errors[0]});
+        setErrors({...errors,[e.target.name]: err.errors[0]});
         console.log("error:",err);
   
       });
 };
 
-const formSchema =yup.object().shape({
+const formSchema =yup.object({
     firstName:yup
     .string()
     .required("First name is required")
@@ -59,7 +59,7 @@ const formSchema =yup.object().shape({
 })
 
 useEffect(() =>{
-    if(signupState.value === ""){
+    if(signupState.verifyPassword.length < 3){
         setButtonDisabled(true);
     }else{setButtonDisabled(false)}
 },[signupState])
@@ -88,9 +88,12 @@ useEffect(() =>{
   const inputChange = e =>{
     e.persist();
     console.log("something changed")
-    setSignupForm(e.target.value)
+    const signupForm ={
+        ...signupState, [e.target.name]:e.target.value
+    } 
+    console.log(signupForm)
+    setSignupForm(signupForm)
     validateChange(e)
-    
 }
 return(
     <form onSubmit={signup}>
