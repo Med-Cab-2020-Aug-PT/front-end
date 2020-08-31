@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react"
 import * as yup from "yup";
-import axios from "axios";
+import axiosWithAuth from "../Components/axiosWithAuth";
 import { Link } from "react-router-dom"
 
 export default function LoginForm (){
@@ -60,7 +60,7 @@ useEffect(() =>{
   const login = e =>{
       e.preventDefault();
       console.log("login success")
-      axios
+      axiosWithAuth()
       .post("https://med-cab-2020-api.herokuapp.com/login",loginState)
         .then(res => {
         console.log("success!",res.data);
